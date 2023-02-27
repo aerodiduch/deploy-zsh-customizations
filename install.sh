@@ -3,8 +3,8 @@
 function install_oh_my_zsh() {
 
     if [ -d ~/.oh-my-zsh ]; then
-        echo "Oh My Zsh is already installed"
-        # aca instalar customizations
+        echo "Oh My Zsh is already installed, installing customizations..."
+        install_plugins
     else
         sudo -u $USER zsh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed -e 's/read -r opt$/opt="y"/' -e '/exec zsh -l/d')"
     fi
